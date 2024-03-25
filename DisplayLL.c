@@ -24,6 +24,13 @@ void create(int array[] ,int n){
     }
 }
 
+void recussive_display(struct Node *p){
+    if(p != 0){
+        printf("%d\n",p->date);
+        recussive_display(p->next);
+    }
+}
+
 void display(struct Node *p){
     while (p != 0) {
         printf("%d\n",p->date);
@@ -34,6 +41,7 @@ void display(struct Node *p){
 int main(void){
     int array[] = {1,4,32,22,42};
     create(array, 5);
-    display(first);
+    //display(first);
+    recussive_display(first);
     return 0;
 }
