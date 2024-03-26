@@ -38,6 +38,14 @@ void display(struct Node *p){
     }
 }
 
+int Rcount(struct Node *p){
+    if(!p){
+        return 0;
+    }else {
+        return 1 + Rcount(p->next);
+    }
+}
+
 int count(struct Node *p){
     int i = 0;
     while(p){
@@ -52,6 +60,6 @@ int main(void){
     create(array, 5);
     //display(first);
     //recussive_display(first);
-    printf("%d\n",count(first));
+    printf("%d\n",Rcount(first));
     return 0;
 }
