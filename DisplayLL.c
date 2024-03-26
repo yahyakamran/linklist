@@ -38,10 +38,20 @@ void display(struct Node *p){
     }
 }
 
+int count(struct Node *p){
+    int i = 0;
+    while(p){
+        ++i;
+        p = p->next;
+    }
+    return i;
+}
+
 int main(void){
     int array[] = {1,4,32,22,42};
     create(array, 5);
     //display(first);
-    recussive_display(first);
+    //recussive_display(first);
+    printf("%d\n",count(first));
     return 0;
 }
