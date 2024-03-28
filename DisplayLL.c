@@ -85,14 +85,26 @@ int max (struct Node *p){
     return max;
 }
 
+int Rmax(struct Node *p){
+    int min = -2147483647;
+    int max;
+    if(!p){
+        return min;
+    }else {
+        int temp = Rmax(p->next);
+        return temp>p->data ? temp : p->data;
+    }
+}
+
 int main(void){
-    int array[] = {1,1,842,2,2};
+    int array[] = {1,1,82,2,2};
     create(array, 5);
     //display(first);
     //recussive_display(first);
     //printf("%d\n",Rcount(first));
     //printf("%d\n",sum(first));
     //printf("%d\n",Rsum(first));
-    printf("%d\n",max(first));
+    //printf("%d\n",max(first));
+    printf("%d\n",Rmax(first));
     return 0;
 }
