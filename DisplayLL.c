@@ -64,12 +64,21 @@ int sum (struct Node *p){
     return sum;
 }
 
+int Rsum(struct Node *p){
+    if(!p){
+        return 0;
+    }else {
+        return p->date + Rsum(p->next);
+    }
+}
+
 int main(void){
     int array[] = {1,1,2,2,2};
     create(array, 5);
     //display(first);
     //recussive_display(first);
     //printf("%d\n",Rcount(first));
-    printf("%d\n",sum(first));
+    //printf("%d\n",sum(first));
+    printf("%d\n",Rsum(first));
     return 0;
 }
