@@ -96,6 +96,16 @@ int Rmax(struct Node *p){
     }
 }
 
+struct Node *search(struct Node *p,int key){
+    while (p == 0) {
+        if(key == p->data){
+            return p;
+        }
+        p= p->next;
+    }
+    return NULL;
+}
+
 int main(void){
     int array[] = {1,1,82,2,2};
     create(array, 5);
