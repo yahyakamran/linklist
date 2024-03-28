@@ -72,13 +72,27 @@ int Rsum(struct Node *p){
     }
 }
 
+int max (struct Node *p){
+    int min = -2147483647;
+    int max;
+    while (p) {
+        if(p->data > min){
+            max = p->data;
+            min = p->data;
+        }
+        p = p->next;
+    }
+    return max;
+}
+
 int main(void){
-    int array[] = {1,1,2,2,2};
+    int array[] = {1,1,842,2,2};
     create(array, 5);
     //display(first);
     //recussive_display(first);
     //printf("%d\n",Rcount(first));
     //printf("%d\n",sum(first));
-    printf("%d\n",Rsum(first));
+    //printf("%d\n",Rsum(first));
+    printf("%d\n",max(first));
     return 0;
 }
