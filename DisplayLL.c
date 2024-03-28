@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 struct Node {
-    int date;
+    int data;
     struct Node *next;
 };
 struct Node *first = NULL;
@@ -11,13 +11,13 @@ void create(int array[] ,int n){
     int i;
     struct Node *node , *last;
     first = (struct Node *)malloc(sizeof(struct Node));
-    first->date = array[0];
+    first->data = array[0];
     first->next = NULL;
     last = first;
 
     for(int i = 1 ; i < n ; i++){
         node  = (struct Node *)malloc(sizeof(struct Node));
-        node->date = array[i];
+        node->data = array[i];
         node->next = NULL;
         last->next = node;
         last = node;
@@ -26,14 +26,14 @@ void create(int array[] ,int n){
 
 void recussive_display(struct Node *p){
     if(p != 0){
-        printf("%d\n",p->date);
+        printf("%d\n",p->data);
         recussive_display(p->next);
     }
 }
 
 void display(struct Node *p){
     while (p != 0) {
-        printf("%d\n",p->date);
+        printf("%d\n",p->data);
         p = p->next;
     }
 }
@@ -58,7 +58,7 @@ int count(struct Node *p){
 int sum (struct Node *p){
     int sum = 0;
     while (p) {
-        sum += p->date;
+        sum += p->data;
         p=p->next;
     }
     return sum;
@@ -68,7 +68,7 @@ int Rsum(struct Node *p){
     if(!p){
         return 0;
     }else {
-        return p->date + Rsum(p->next);
+        return p->data + Rsum(p->next);
     }
 }
 
