@@ -55,11 +55,21 @@ int count(struct Node *p){
     return i;
 }
 
+int sum (struct Node *p){
+    int sum = 0;
+    while (p) {
+        sum += p->date;
+        p=p->next;
+    }
+    return sum;
+}
+
 int main(void){
-    int array[] = {1,4,32,22,42};
+    int array[] = {1,1,2,2,2};
     create(array, 5);
     //display(first);
     //recussive_display(first);
-    printf("%d\n",Rcount(first));
+    //printf("%d\n",Rcount(first));
+    printf("%d\n",sum(first));
     return 0;
 }
